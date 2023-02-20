@@ -25,3 +25,5 @@ Route.get('/', async ({ view }) => {
 })
 
 Route.get('/absences', 'AbsencesController.index')
+Route.get('/absences/add', 'AbsencesController.add')
+Route.post('/absences/add', 'AbsencesController.add_posted')
