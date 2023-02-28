@@ -20,10 +20,20 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
-})
+Route.get('/', 'HomeController.index')
 
 Route.get('/absences', 'AbsencesController.index')
+  .as('absences.index.show')
 Route.get('/absences/add', 'AbsencesController.add')
 Route.post('/absences/add', 'AbsencesController.add_posted')
+
+Route.get('/cerfiticate', 'CerfiticateApplicationsController.index')
+  .as('cerfiticate.inde.show')
+Route.get('/cerfiticate/add', 'CerfiticateApplicationsController.add')
+Route.post('/cerfiticate/add', 'CerfiticateApplicationsController.add_posted')
+
+Route.get('/register', 'AuthController.registerShow').as('auth.register.show')
+Route.post('/register', 'AuthController.register').as('auth.register')
+Route.get('/login', 'AuthController.loginShow').as('auth.login.show')
+Route.post('/login', 'AuthController.login').as('auth.login')
+Route.get('/logout', 'AuthController.logout').as('auth.logout')

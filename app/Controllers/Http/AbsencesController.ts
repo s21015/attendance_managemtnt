@@ -5,8 +5,7 @@ export default class AbsencesController {
     public async index(ctx: HttpContextContract) {
       const absences = await Absence.all()
       const data = {
-        title: 'sample',
-        message: 'temple',
+        title: '届け出一覧',
         data: absences
       }
       return ctx.view.render('absences/index', data)
@@ -14,8 +13,8 @@ export default class AbsencesController {
 
     public async add(ctx: HttpContextContract) {
       const data = {
-        title: '届け出',
-        message: '届け出の新規作成'
+        title: '届け出の新規作成',
+        message: '届け出を入力してください'
       }
       return ctx.view.render('absences/add', data)
     }

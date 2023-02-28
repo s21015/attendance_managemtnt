@@ -6,11 +6,11 @@ export default class extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string('student_name')
-      table.string('student_id')
-      table.integer('kind')
+      table.string('student_name').notNullable()
+      table.string('student_id').notNullable()
+      table.integer('kind').notNullable()
       table.string('reason')
-      table.dateTime('start_date')
+      table.dateTime('start_date').notNullable()
       table.dateTime('end_date')
       table.timestamp('created_at', { useTz: true })
     })
